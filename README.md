@@ -1,0 +1,350 @@
+🩺 MedAI — Medical Query Generator
+
+AI-powered medical information assistant built with Python, Flask & Google Gemini.
+
+MedAI is a web-based medical information assistant that allows users to ask health-related questions and receive clear, structured, educational information powered by Google's Gemini API.
+
+⚠️ MedAI is not a doctor and does not provide medical diagnosis or treatment.
+
+✨ Features
+🩺 AI-powered medical question answering
+🤖 Google Gemini integration
+💬 Simple medical query interface
+⚡ Fast AI responses
+🔒 API key protected with .env
+📊 Character counter
+💡 Example medical questions
+⏳ Loading animation
+📋 Copy AI response
+🗑️ Clear response
+🌙 Dark mode
+📱 Mobile responsive design
+🚨 Medical safety disclaimer
+❌ Error handling
+⌨️ Ctrl + Enter shortcut
+🛠️ Tech Stack
+Technology	Purpose
+🐍 Python	Backend programming
+🌐 Flask	Web framework
+🤖 Google Gemini	AI response generation
+HTML5	Frontend structure
+CSS3	UI & responsive design
+JavaScript	Frontend interaction
+python-dotenv	Environment variables
+📁 Project Structure
+medical-query-generator/
+│
+├── app.py
+├── requirements.txt
+├── .env
+├── .gitignore
+├── README.md
+│
+├── templates/
+│   └── index.html
+│
+└── static/
+    ├── style.css
+    └── script.js
+🚀 Getting Started
+1️⃣ Clone the Repository
+git clone YOUR_GITHUB_REPOSITORY_URL
+
+Move into the project directory:
+
+cd medical-query-generator
+2️⃣ Create a Virtual Environment
+Windows
+python -m venv venv
+
+Activate it:
+
+.\venv\Scripts\Activate.ps1
+
+If PowerShell blocks activation:
+
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+
+Then:
+
+.\venv\Scripts\Activate.ps1
+3️⃣ Install Dependencies
+pip install -r requirements.txt
+
+Or install them manually:
+
+pip install flask python-dotenv google-genai
+🔑 Gemini API Setup
+
+MedAI requires a Google Gemini API key.
+
+Get your API key from:
+
+Google AI Studio
+
+https://aistudio.google.com/apikey
+
+Create/copy your API key and add it to the .env file.
+
+.env
+GEMINI_API_KEY=YOUR_GEMINI_API_KEY
+
+Example:
+
+GEMINI_API_KEY=AIzaSyXXXXXXXXXXXXXXXXXXXXXXXX
+
+⚠️ Never publish your API key on GitHub.
+
+The .gitignore file already excludes .env.
+
+▶️ Run the Application
+
+Start the Flask server:
+
+python app.py
+
+You should see:
+
+* Running on http://127.0.0.1:5000
+
+Open your browser and visit:
+
+http://127.0.0.1:5000
+💬 How to Use
+Step 1
+
+Open the MedAI website.
+
+Step 2
+
+Enter a medical question.
+
+Example:
+
+What are common symptoms of dehydration?
+Step 3
+
+Click:
+
+Generate Response
+Step 4
+
+MedAI sends the question to Gemini and displays the generated medical information.
+
+You can then:
+
+📋 Copy the response
+🗑️ Clear the response
+🌙 Switch between light and dark mode
+💡 Example Questions
+
+Try questions such as:
+
+What are common symptoms of dehydration?
+What causes a common cold?
+Why do I feel tired frequently?
+What can cause a headache?
+What are common symptoms of seasonal allergies?
+🔄 Application Flow
+                👤 USER
+                   │
+                   ▼
+          ┌─────────────────┐
+          │  MedAI Frontend │
+          │ HTML/CSS/JS     │
+          └────────┬────────┘
+                   │
+                   │ POST /ask
+                   ▼
+          ┌─────────────────┐
+          │  Flask Backend  │
+          │     app.py      │
+          └────────┬────────┘
+                   │
+                   ▼
+          ┌─────────────────┐
+          │   Gemini API    │
+          │   AI Engine     │
+          └────────┬────────┘
+                   │
+                   ▼
+          ┌─────────────────┐
+          │ Medical Info    │
+          │    Response     │
+          └────────┬────────┘
+                   │
+                   ▼
+                👤 USER
+🔌 API Endpoint
+
+MedAI uses a Flask endpoint for medical queries.
+
+POST /ask
+
+Request:
+
+{
+  "query": "What are common symptoms of dehydration?"
+}
+
+Response:
+
+{
+  "response": "..."
+}
+
+If the query is empty:
+
+{
+  "error": "Medical question cannot be empty."
+}
+🧠 AI Safety Prompt
+
+The Gemini model is instructed to:
+
+Provide general educational information
+Avoid claiming to diagnose users
+Explain possible causes when appropriate
+Explain common symptoms
+Provide general guidance
+Mention when professional medical care may be appropriate
+Highlight potential emergency situations
+Avoid personalized medication prescriptions or dosages
+Encourage consultation with qualified healthcare professionals
+🔐 Security
+
+The Gemini API key is stored in an environment variable:
+
+GEMINI_API_KEY=YOUR_KEY
+
+It is not hard-coded into the application.
+
+The .gitignore file contains:
+
+venv/
+.env
+__pycache__/
+*.pyc
+
+Before pushing to GitHub, make sure your .env file is not tracked.
+
+Check with:
+
+git status
+
+If .env appears as a file ready to commit, do not push it.
+
+⚠️ Medical Disclaimer
+
+MedAI is an educational software project.
+
+It does not:
+
+Diagnose diseases
+Replace doctors
+Replace emergency medical services
+Prescribe medication
+Provide personalized medical treatment
+
+Information generated by AI can be incomplete or incorrect.
+
+For personal medical concerns, consult a qualified healthcare professional.
+
+If you believe you are experiencing a medical emergency, seek appropriate emergency medical care immediately.
+
+🧪 Development
+
+Run Flask in development mode:
+
+python app.py
+
+The application will be available at:
+
+http://127.0.0.1:5000
+📦 Requirements
+
+The project requires:
+
+Flask
+python-dotenv
+google-genai
+
+These dependencies are also listed in:
+
+requirements.txt
+🤝 Contributing
+
+Contributions are welcome.
+
+1. Fork the repository
+2. Clone your fork
+git clone YOUR_FORK_URL
+3. Create a feature branch
+git checkout -b feature/new-feature
+4. Make your changes
+5. Commit
+git add .
+git commit -m "Add new feature"
+6. Push
+git push origin feature/new-feature
+7. Open a Pull Request
+🗺️ Future Improvements
+
+Possible future versions could include:
+
+💬 Full AI chat history
+👤 User accounts
+📚 Medical knowledge base
+🔎 Medical source references
+🚨 Better emergency symptom detection
+🌍 Multiple languages
+🎤 Voice input
+🔊 Text-to-speech
+📱 Progressive Web App
+🗃️ Conversation history
+🧠 Retrieval-Augmented Generation (RAG)
+🏥 Doctor/clinic discovery
+📊 Health information dashboard
+📸 Screenshots
+
+Add screenshots of your application here after deployment.
+
+Example:
+
+![MedAI Screenshot](screenshots/home.png)
+🌟 Project Highlights
+🩺 Medical Information Assistant
+🤖 Google Gemini AI
+🐍 Python + Flask
+🎨 Modern Responsive UI
+🌙 Dark Mode
+📱 Mobile Friendly
+🔐 Environment-Based API Security
+⚡ Real-Time AI Responses
+📄 License
+
+This project is distributed under the MIT License.
+
+See the LICENSE file for details.
+
+👨‍💻 Author
+
+Niraj
+
+Built as an AI + Web Development project using:
+
+Python • Flask • JavaScript • Google Gemini
+
+⭐ Support
+
+If you find this project useful, consider giving the repository a ⭐ on GitHub.
+
+<p align="center">
+
+🩺 MedAI
+
+Understand your health better.
+
+Built with ❤️ using Python, Flask & Gemini.
+
+</p>
